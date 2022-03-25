@@ -32,6 +32,12 @@ $loader->registerDirs(
     ]
 );
 
+$loader->registerNamespaces(
+    [
+        'App\Components' => APP_PATH.'/components',
+    ]
+);
+
 $loader->register();
 
 $container = new FactoryDefault();
@@ -76,7 +82,7 @@ $container->set(
 
 $container->set(
     'escaper',
-    function (){
+    function () {
         return new Escaper();
     }
 );
@@ -84,7 +90,7 @@ $container->set(
 $container->set(
     'service',
     function () {
-       
+
         return date('Y-m-d H:i:s');
     }
 );
